@@ -1,0 +1,52 @@
+{
+  "name": "firefox-password-extractor",
+  "version": "1.2.0",
+  "description": "Extract and decrypt saved passwords from Firefox profiles on Windows using NSS library",
+  "main": "index.js",
+  "bin": {
+    "start": "./index.js"
+  },
+  "scripts": {
+    "start": "node firefox-decrypt.js",
+    "list": "node firefox-decrypt.js --list",
+    "help": "node firefox-decrypt.js --help"
+  },
+  "keywords": [
+    "firefox",
+    "password",
+    "decrypt",
+    "recovery",
+    "nss",
+    "mozilla",
+    "credentials",
+    "extractor",
+    "thunderbird",
+    "waterfox"
+  ],
+  "author": {
+    "name": "aswin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/00nx/firefox-password-extraction.git"
+  },
+  "bugs": {
+    "url": "https://github.com/00nx/firefox-password-extraction/issues"
+  },
+  "homepage": "https://github.com/00nx/firefox-password-extraction#readme",
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "koffi": "^2.15.6"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "os": [
+    "win32"
+  ],
+  "license": "GPL-3.0",
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/00nx"
+  }
+}
