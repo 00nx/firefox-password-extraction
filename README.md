@@ -246,24 +246,6 @@ npm test
 
 This project is licensed under the **GNU General Public License v3.0** - see the [LICENSE](LICENSE) file for details.
 
-Based on original work from [dumpzilla.org](http://www.dumpzilla.org/).
-
-## ⚖️ Legal Disclaimer
-
-This software is provided for educational and legitimate password recovery purposes only. Users are solely responsible for ensuring they have proper authorization before extracting passwords. The authors assume no liability for misuse of this tool.
-
-**Use this tool ethically and legally.**
-
-## 🙏 Acknowledgments
-
-- Original Python implementation by [firefox_decrypt](https://github.com/unode/firefox_decrypt)
-- Mozilla NSS (Network Security Services)
-- The open-source community
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/00nx/firefox-password-extraction/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/00nx/firefox-password-extraction/discussions)
 
 
 
