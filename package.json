@@ -4,12 +4,12 @@
   "description": "Extract and decrypt saved passwords from Firefox profiles on Windows using NSS library",
   "main": "index.js",
   "bin": {
-    "start": "./index.js"
+    "run": "./index.js"
   },
   "scripts": {
-    "start": "node firefox-decrypt.js",
-    "list": "node firefox-decrypt.js --list",
-    "help": "node firefox-decrypt.js --help"
+    "start": "node index.js",
+    "list": "node index.js --list",
+    "help": "node index.js --help"
   },
   "keywords": [
     "firefox",
