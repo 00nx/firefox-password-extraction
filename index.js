@@ -5,13 +5,15 @@
 
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const os = require('os');
-const koffi = require('koffi');
-const sqlite3 = require('better-sqlite3');
+const fs       = require('fs');
+const path     = require('path');
+const os       = require('os');
+const koffi    = require('koffi');
+const sqlite3  = require('better-sqlite3');
 
 const VERSION = '1.2.0';
+let verbosity = 0;
+
 const EXIT = {
   CLEAN: 0, ERROR: 1, MISSING_PROFILEINI: 2, MISSING_SECRETS: 3,
   BAD_PROFILEINI: 4, LOCATION_NO_DIRECTORY: 5, BAD_SECRETS: 6,
@@ -21,7 +23,6 @@ const EXIT = {
   MISSING_CHOICE: 31, NO_SUCH_PROFILE: 32, UNKNOWN_ERROR: 100,
 };
 
-let verbosity = 0;
 const log = {
   debug: (...a) => { if (verbosity >= 2) console.error('[DEBUG]', ...a); },
   info: (...a) => { if (verbosity >= 1) console.error('[INFO]', ...a); },
@@ -36,7 +37,6 @@ const SECItem = koffi.struct('SECItem', {
 });
 const PK11SlotInfo = koffi.opaque('PK11SlotInfo');
 
-// Load nss3.dll via koffi
 function loadNSS() {
   const pf = process.env['ProgramFiles'] || 'C:\\Program Files';
   const pf86 = process.env['ProgramFiles(x86)'] || 'C:\\Program Files (x86)';
@@ -50,6 +50,7 @@ function loadNSS() {
   for (const b of browsers) {
     dirs.push(path.join(pf, b), path.join(pf86, b), path.join(local, b));
   }
+
   for (const d of (process.env.PATH || '').split(';')) dirs.push(d.trim());
 
   const candidates = [];
@@ -68,6 +69,7 @@ function loadNSS() {
   for (const { dll, dir } of candidates) {
     log.debug('Trying to load', dll);
     process.env.PATH = dir + ';' + process.env.PATH;
+    
     try {
       const lib = koffi.load(dll);
       log.info('Loaded NSS from', dll);
