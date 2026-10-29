@@ -628,3 +628,4 @@ main().catch(error => {
   log.error('Unexpected error:', error);
   process.exit(EXIT.UNKNOWN_ERROR);
 });
+ 
