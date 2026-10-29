@@ -1,7 +1,5 @@
 #!/usr/bin/env node
-// firefox-decrypt.js – Automatic password extraction from Firefox profiles
-// GPL v3 – based on original work from dumpzilla.org
-// by aswin / 00nx
+
 
 'use strict';
 
