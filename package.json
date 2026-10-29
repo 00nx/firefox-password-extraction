@@ -11,18 +11,6 @@
     "list": "node index.js --list",
     "help": "node index.js --help"
   },
-  "keywords": [
-    "firefox",
-    "password",
-    "decrypt",
-    "recovery",
-    "nss",
-    "mozilla",
-    "credentials",
-    "extractor",
-    "thunderbird",
-    "waterfox"
-  ],
   "author": {
     "name": "aswin"
   },
